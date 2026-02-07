@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "mcjava-login-mod",
+  "version": "${version}",
+  "name": "MCJava Login Mod",
+  "description": "A login mod for Minecraft Java servers that requires password authentication",
+  "authors": [
+    "Your Name"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "MIT",
+  "icon": "assets/mcjava-login-mod/icon.png",
+  "environment": "both",
+  "entrypoints": {
+    "server": [
+      "com.example.loginmod.LoginMod"
+    ],
+    "client": [
+      "com.example.loginmod.client.LoginModClient"
+    ]
+  },
+  "networking": {
+    "channels": [
+      {
+        "id": "mcjava:login",
+        "protocol_version": 1
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
