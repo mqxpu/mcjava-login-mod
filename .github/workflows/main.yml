@@ -20,16 +20,11 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
 
-    - name: Install Gradle
-      run: |
-        wget -q https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
-        unzip -q gradle-7.5.1-bin.zip
-        export PATH=$PWD/gradle-7.5.1/bin:$PATH
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v3
 
     - name: Build with Gradle
-      run: |
-        export PATH=$PWD/gradle-7.5.1/bin:$PATH
-        gradle build
+      run: gradle build
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
